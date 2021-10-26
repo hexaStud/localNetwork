@@ -1,0 +1,90 @@
+:root {
+  --lumo-base-color: hsl(214, 35%, 21%);
+  --lumo-shade-5pct: rgba(26, 26, 26, 0.05);
+  --lumo-shade-10pct: rgba(26, 26, 26, 0.1);
+  --lumo-shade-20pct: rgba(26, 26, 26, 0.2);
+  --lumo-shade-30pct: rgba(26, 26, 26, 0.3);
+  --lumo-shade-40pct: rgba(26, 26, 26, 0.4);
+  --lumo-shade-50pct: rgba(26, 26, 26, 0.5);
+  --lumo-shade-60pct: rgba(26, 26, 26, 0.6);
+  --lumo-shade-70pct: rgba(26, 26, 26, 0.7);
+  --lumo-shade-80pct: rgba(26, 26, 26, 0.8);
+  --lumo-shade-90pct: rgba(26, 26, 26, 0.9);
+  --lumo-primary-text-color: rgb(13, 110, 253);
+  --lumo-primary-color-50pct: rgba(13, 110, 253, 0.5);
+  --lumo-primary-color-10pct: rgba(13, 110, 253, 0.1);
+  --lumo-error-text-color: rgb(195, 44, 44);
+  --lumo-success-text-color: rgb(1, 188, 122);
+  --lumo-shade: hsl(0, 0%, 10%);
+  --lumo-primary-color: #0d6efd;
+  --lumo-error-color: hsl(0, 63%, 47%);
+  --lumo-error-color-50pct: rgba(195, 44, 44, 0.5);
+  --lumo-error-color-10pct: rgba(195, 44, 44, 0.1);
+  --lumo-success-color: hsl(159, 99%, 37%);
+  --lumo-success-color-50pct: rgba(1, 188, 122, 0.5);
+  --lumo-success-color-10pct: rgba(1, 188, 122, 0.1);
+  --lumo-success-contrast-color: hsl(159, 29%, 10%);
+  --lumo-tint: hsl(214, 100%, 98%);
+  --lumo-tint-5pct: hsla(214, 65%, 85%, 0.06);
+  --lumo-tint-10pct: hsla(214, 60%, 80%, 0.14);
+  --lumo-tint-20pct: hsla(214, 64%, 82%, 0.23);
+  --lumo-tint-30pct: hsla(214, 69%, 84%, 0.32);
+  --lumo-tint-40pct: hsla(214, 73%, 86%, 0.41);
+  --lumo-tint-50pct: hsla(214, 78%, 88%, 0.5);
+  --lumo-tint-60pct: hsla(214, 82%, 90%, 0.6);
+  --lumo-tint-70pct: hsla(214, 87%, 92%, 0.7);
+  --lumo-tint-80pct: hsla(214, 91%, 94%, 0.8);
+  --lumo-tint-90pct: hsla(214, 96%, 96%, 0.9);
+  --lumo-contrast: var(--lumo-tint);
+  --lumo-contrast-5pct: var(--lumo-tint-5pct);
+  --lumo-contrast-10pct: var(--lumo-tint-10pct);
+  --lumo-contrast-20pct: var(--lumo-tint-20pct);
+  --lumo-contrast-30pct: var(--lumo-tint-30pct);
+  --lumo-contrast-40pct: var(--lumo-tint-40pct);
+  --lumo-contrast-50pct: var(--lumo-tint-50pct);
+  --lumo-contrast-60pct: var(--lumo-tint-60pct);
+  --lumo-contrast-70pct: var(--lumo-tint-70pct);
+  --lumo-contrast-80pct: var(--lumo-tint-80pct);
+  --lumo-contrast-90pct: var(--lumo-tint-90pct);
+}
+
+body {
+  background-color: var(--lumo-base-color);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+table {
+  background: var(--lumo-shade-50pct)!important;
+  border: 2px solid var(--lumo-contrast-50pct);
+}
+
+thead {
+  box-shadow: 0 0 0 1px var(--lumo-contrast-30pct);
+}
+
+tbody {
+  background: var(--lumo-shade-30pct)!important;
+}
+
+td {
+  padding: 10px!important;
+}
+
+@media only screen and (max-width: 800px) {
+  .component-box {
+    min-width: 400px;
+    width: 100%;
+  }
+}
+
