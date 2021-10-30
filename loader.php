@@ -40,3 +40,4 @@ function load($path)
 }
 
 load(__DIR__ . "/lib");
+load(__DIR__. "/src");

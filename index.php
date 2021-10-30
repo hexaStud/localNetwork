@@ -1,5 +1,12 @@
 <?php
-    include "loader.php";
+include "loader.php";
+
+use HexaStudio\LocalNetwork\Extension;
+use HexaStudio\LocalNetwork\Dashboard;
+use HexaStudio\Library\IO\Path;
+
+Extension::loadComponents(Path::join(__DIR__, array("ext")));
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +18,33 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/classes.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-</head>
+    <?php
+    $css = array();
+    $js = array();
 
+    foreach (Dashboard::$css as $src) {
+        if (!in_array($src, $css)) {
+            array_push($css, $src);
+        }
+    }
+
+    foreach (Dashboard::$js as $src) {
+        if (!in_array($src, $js)) {
+            array_push($js, $src);
+        }
+    }
+
+    foreach ($css as $item) {
+        echo /** @lang HTML */
+        "<link rel=\"stylesheet\" href=\"$item\">";
+    }
+
+    foreach ($js as $item) {
+        echo /** @lang HTML */
+        "<script src='$item'></script>";
+    }
+    ?>
+</head>
 <body>
 <div class="row container-1">
     <div class="col">
@@ -29,30 +61,15 @@
         <div class="row container-2">
             <div class="col">
                 <div class="row">
-                    <div class="col margin-s container-0 component-box">
-                        <h4>Loading Component...</h4>
-                    </div>
-                    <div class="col margin-s container-0 component-box">
-                        <h4>Loading Component...</h4>
-                    </div>
-                    <div class="col margin-s container-0 component-box">
-                        <h4>Loading Component...</h4>
-                    </div>
-                    <div class="col margin-s container-0 component-box">
-                        <h4>Loading Component...</h4>
-                    </div>
-                    <div class="col margin-s container-0 component-box">
-                        <h4>Loading Component...</h4>
-                    </div>
-                    <div class="col margin-s container-0 component-box">
-                        <h4>Loading Component...</h4>
-                    </div>
-                    <div class="col margin-s container-0 component-box">
-                        <h4>Loading Component...</h4>
-                    </div>
-                    <div class="col margin-s container-0 component-box">
-                        <h4>Loading Component...</h4>
-                    </div>
+                    <?php
+                    foreach (Extension::$dashboard as $dashboard) {
+                        echo <<<EOF
+                                <div class="col margin-s container-0 component-box">
+                                    {$dashboard->render()->parse()}
+                                </div>
+                            EOF;
+                    }
+                    ?>
                 </div>
             </div>
         </div>
